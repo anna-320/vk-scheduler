@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Добавить сообщение в ВК</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Добавить сообщение в чат ВК</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+      <label>Текст сообщения:</label>
+      <textarea name="message" placeholder="Привет! У нас сегодня стрим!" required></textarea>
+
+      <label>Дата:</label>
+      <input type="date" name="date" required>
+
+      <label>Время:</label>
+      <input type="time" name="time" required>
+
+      <label>Фото (опционально):</label>
+      <input type="file" name="photo" accept="image/*">
+
+      <button type="submit">➕ Добавить в расписание</button>
+    </form>
+
+    <p style="text-align: center; margin-top: 20px;">
+      <a href="/list">Посмотреть все запланированные</a>
+    </p>
+  </div>
+</body>
+</html>

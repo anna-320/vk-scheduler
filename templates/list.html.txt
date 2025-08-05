@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Запланированные сообщения</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⏰ Запланированные сообщения</h1>
+    <p><a href="/">← Назад</a></p>
+
+    {% if messages %}
+    <ul>
+      {% for msg in messages %}
+      <li>
+        <strong>{{ msg.date }} в {{ msg.time }}</strong><br>
+        {{ msg.message }}<br>
+        {% if msg.photo %}
+        <img src="/{{ msg.photo }}" alt="Фото"><br>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>Нет запланированных сообщений.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
